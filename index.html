@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="wrapper" class="wrapper">
+      <div class="page page-one">
+        <h1>第一页</h1>
+        <div id="box" class="hide"></div>
+        <a href="javascript:void(0);" class="next-btn"></a>
+      </div>
+      <div class="hide page page-two">
+        <h1>第二页</h1>
+        <a href="javascript:void(0);" class="next-btn"></a>
+      </div>
+      <div class="hide page page-three">
+        <h1>第三页</h1>
+        <a href="javascript:void(0);" class="next-btn"></a>
+      </div>
+      <div class="hide page page-four">
+        <h1>第四页</h1>
+      </div>
+    </div>
+    <script src="./js/zepto.js"></script>
+    <script src="./js/fastclick.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+      FastClick.attach(document.body);
+    </script>
+  </body>
+</html>
