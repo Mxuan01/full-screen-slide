@@ -1,7 +1,7 @@
 var wrapper = $('.wrapper');
 
 var toNextPage = function(e) {
-  
+
   var curParent = $(e.target).parents('.page');
 
   setTimeout(function(){
