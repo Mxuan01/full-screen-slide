@@ -1,32 +1,25 @@
 var wrapper = $('.wrapper');
 
-wrapper.on('click', '.next-btn', function(e){
-  var curParent = $(e.target).parent();
+var toNextPage = function(e) {
+  var curParent = $(e.target).parents('.page');
 
   setTimeout(function(){
     curParent.addClass("hide");
   }, 1000)
 
   curParent.next().removeClass('hide').addClass("slideUp");
+}
 
-  // $("#box").removeClass('hide').addClass('slideUp');
+wrapper.on('click', '.next-btn', function(e){
+  toNextPage(e)
+}).on('click', '.lottery_btn', function(e){
+  var rotate = 'rotateZ(' + (360*4+45) + 'deg)';
 
-  // var rotate = 'rotateZ(' + (360*4+45) + 'deg)';
+  $(".pointer").css({
+		'-webkit-transform': rotate,
+		'transform': rotate
+	}).on('transitionend', function(){
+    toNextPage(e)
+  });
 
-	// $("#box").css({
-	// 	'-webkit-transform': rotate,
-	// 	'transform': rotate
-	// })
 })
-
-// $(".next-btn").on('click', function(e) {
-//   var curParent = $(e.target).parent();
-
-//   setTimeout(function(){
-//     curParent.addClass("hide");
-//   }, 1000)
-  
-//   curParent.next().removeClass('hide').addClass('slideUp');
-
-//   // $("#box").removeClass('hide').addClass('slideUp');
-// })
