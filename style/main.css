@@ -14,6 +14,7 @@ html, body, .wrapper {
   position: relative;
   max-width: 640px;
   margin: 0 auto;
+  perspective: 500px;
 }
 
 .page {
@@ -22,6 +23,8 @@ html, body, .wrapper {
   position: absolute;
   top: 0;
   background-color: #fafafa;
+
+  transform-style: preserve-3d;
 }
 
 .page-four {
@@ -44,12 +47,24 @@ html, body, .wrapper {
   background-size: contain;
 }
 
-#box {
+.box {
   width: 200px;
   height: 200px;
   background: #ddd;
-  -webkit-transition: all 2s ease-out;
-	transition: all 2s ease-out;
+
+  /*-webkit-animation: slowRotate 6s ease-in-out;
+  animation: slowRotate 6s ease-in-out;*/
+}
+
+@keyframes slowRotate {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 181deg);
+    transform: rotate3d(0, 0, 1, 181deg);
+  }
 }
 
 img {
@@ -67,6 +82,9 @@ img {
   margin-left: -120px;
   width: 240px;
   height: 240px;
+
+  /*transform-style: preserve-3d;
+  perspective: 500px;*/
 }
 
 .turntable img {
@@ -100,8 +118,8 @@ img {
   height: 60px;
   margin: -30px 0 0 -30px;
   background-color: #fff;
-  -webkit-transition: all 2s ease-out;
-  transition: all 2s ease-out;
+  -webkit-transition: -webkit-transform 2s ease-out;
+  transition: transform 2s ease-out;
 }
 
 .turntable .pointer:before,
